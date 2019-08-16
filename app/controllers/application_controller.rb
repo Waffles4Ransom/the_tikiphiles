@@ -5,4 +5,9 @@ class ApplicationController < Sinatra::Base
   enable :sessions
   set :session_secret, ENV['SESSION_SECRET']
 
+
+  get '/' do
+    "Micah iz cool"
+  end
+
 end

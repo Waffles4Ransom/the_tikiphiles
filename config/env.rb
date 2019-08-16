@@ -12,3 +12,5 @@ if ENV['SINATRA_ENV'] == 'development'
   require_relative '../secrets.rb'
 end
 
+require_all 'app'
+
