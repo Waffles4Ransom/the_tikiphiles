@@ -10,4 +10,6 @@ class ApplicationController < Sinatra::Base
     "Micah iz cool"
   end
 
+  
+
 end
