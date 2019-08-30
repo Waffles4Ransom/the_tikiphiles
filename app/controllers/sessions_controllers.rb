@@ -26,8 +26,8 @@ class SessionsController < ApplicationController
     if @user.errors.any?
       erb :'sessions/signup'
     else
-      session[:user_id] = user.id
-      redirect '/drinks/index'
+      session[:user_id] = @user.id
+      redirect '/drinks'
     end
   end 
 
