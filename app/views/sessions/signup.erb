@@ -2,16 +2,21 @@
   <h2>Become a Tikiphile: </h2>
   <p>
     <label for="name"> Name:</label>
-    <input type="text" name="name">
+    <input type="text" name="name" required>
   </p>
   <p>
     <label for="username"> User Name:</label>
-    <input type="text" name="username">
+    <input type="text" name="username" required>
   </p>
   <p>
     <label for="password"> Password:</label>
-    <input type="text" name="password">
+    <input type="password" name="password" required>
   </p>
+
+  <p>
+      <label for="password_confirm"> Confirm your Password:</label>
+      <input type="password" name="password_confirm" required>
+    </p>
   
   <input type="submit" value="Sign Up">
 </form>
