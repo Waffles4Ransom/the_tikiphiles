@@ -4,6 +4,6 @@ class User < ActiveRecord::Base
 
   validates :name, presence: true
   validates :username, presence: true, uniqueness: true, length: { minimum: 3 }
-  validates :password, length: {minimum: 6}, confirmation: true
+  validates :password, length: {minimum: 6}, confirmation: true, unless: Proc.new { |u| u.password.blank? }
 
 end 
