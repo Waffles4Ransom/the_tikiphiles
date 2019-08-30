@@ -29,7 +29,6 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect '/drinks/index'
     end
-
   end 
 
 end 
