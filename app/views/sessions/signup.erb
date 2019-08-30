@@ -1,22 +1,28 @@
 <form class="sign-up" action="/signup" method="POST">
   <h2>Become a Tikiphile: </h2>
+  <% if @user && @user.errors.any? %>
+    <% @user.errors.full_messages.each do |e|%>
+      <p class="errors"><%= e %></p>
+      <% end %>
+  <% end %>
+
   <p>
     <label for="name"> Name:</label>
-    <input type="text" name="name" required>
+    <input type="text" name="name" id="name" >
   </p>
   <p>
     <label for="username"> User Name:</label>
-    <input type="text" name="username" required>
+    <input type="text" name="username" id="username" >
   </p>
   <p>
     <label for="password"> Password:</label>
-    <input type="password" name="password" required>
+    <input type="password" name="password" id="password" >
   </p>
 
   <p>
-      <label for="password_confirm"> Confirm your Password:</label>
-      <input type="password" name="password_confirm" required>
-    </p>
+    <label for="password_confirm"> Confirm your Password:</label>
+    <input type="password" name="password_confirm" >
+  </p>
   
   <input type="submit" value="Sign Up">
 </form>

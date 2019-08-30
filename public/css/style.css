@@ -9,20 +9,17 @@ header {
 }
 
  .welcome {
-   font-family: 'Bungee', sans-serif;
    text-align: center;
 }
 
 .sign-up {
-  font-family: 'Bungee', sans-serif;
   text-align: center;
 }
 
 .log-in {
-  font-family: 'Bungee', sans-serif;
   text-align: center;
 }
 
-.login_error {
+.errors {
   color: rgb(122, 18, 18);
 }
