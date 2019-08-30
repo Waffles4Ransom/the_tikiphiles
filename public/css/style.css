@@ -1,11 +1,13 @@
 body {
-  background: lightcyan;
+  background: cornsilk;
 }
 
 header {
+  font-family: 'Bungee Shade';
   text-align: center;
 }
 
  .welcome {
+   font-family: 'Bungee', sans-serif;
   text-align: center;
 }
