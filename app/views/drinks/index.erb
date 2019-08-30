@@ -1,2 +1,11 @@
 
 <h3>These are a few of your favorite drinks...</h3>
+<% @drinks.each do |drink|%>
+  <h5><%= drink.name %></h5>
+  <ul>
+    <li><%= drink.category %></li>
+    <li><%= drink.rating %></li>
+    <li><%= drink.bar %></li>
+    <li><%= drink.location %></li>
+  </ul>
+<% end %>
