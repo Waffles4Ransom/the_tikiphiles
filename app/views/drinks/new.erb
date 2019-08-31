@@ -4,18 +4,16 @@
 <p class="errors"><%= @error if @error%></p>
 
 <form action="/drinks" method="POST">
-  <p>
+  
     <label for="name">Drink Name:</label>
-    <input type="text" name="name" id="name">
-  </p>
-  <p>
+    <input type="text" name="name" id="name"><br>
+
     <label for="bar">Bar Name:</label>
-    <input type="text" name="bar" id="bar">
-  </p>
-  <p>
+    <input type="text" name="bar" id="bar"><br>
+  
     <label for="location">Location:</label>
-    <input type="text" name="location" id="location" value="ex: Denver, CO">
-  </p>
+    <input type="text" name="location" id="location" value="ex: Denver, CO"><br>
+  
   <label for="rating">Rating:</label><br>
     <ul>
       <li><input type="radio" name="rating" value="0" checked> 0 (SWILL!, never again)</li>
@@ -30,6 +28,9 @@
       <li><input type="radio" name="rating" value="9" checked> 9</li>
       <li><input type="radio" name="rating" value="10" checked> 10 out of 10 would drink again!</li>
     </ul>
+    <label for="image_path">Image URL:</label>
+    <input type="text" name="image_path" id="image_path"><br><br>
   <input type="submit" value="Upload Drink">
-</form>
+</form><br>
+<a class="button right" href="/drinks">Go Back</a>
 </div>
