@@ -1,5 +1,5 @@
 <h2 class="center clear">Welcome <%= current_user.name %></h2>
-<h3 class = "center">These are a few of your favorite drinks...</h3>
+<h3 class = "pad"><a href="/drinks/new">Add a new drink:</a></h3>
 
 <div class="container">
 <% @drinks.each_with_index do |drink, i|%>

@@ -25,8 +25,19 @@ class DrinksController < ApplicationController
   get '/drinks/:id/edit' do 
     authenticate
     @drink = Drink.find_by(id: params[:id])
-
+    erb :'/drinks/edit_drink'
   end 
+
+  patch '/drinks/:id' do 
+    @drink = Drink.find_by(id: params[:id])
+    binding.pry
+    authorized?
+    if @drink.update(params[:drink])
+      redirect '/drinks'
+    else 
+      erb :'/drinks'
+    end 
+  end
 
   
 

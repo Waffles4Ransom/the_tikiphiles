@@ -1,21 +1,17 @@
-<div class="new">
-<h2>Create a new drink:</h2>
+<h2>Edit your drink:</h2>
 
-<p class="errors"><%= @error if @error%></p>
+<form action="/drinks/<% @drink.id %>" method="POST">
+  <input type='hidden' id='hidden' name='_method' value='patch'>
+  <h3><%= @drink.name %></h3>
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name">
+  <h3><%=@drink.category %></h3>
+  <label for="category">Category:</label>
+  <input type="text" id="category" name="category">
+  <h3><%= @drink.bar %></h3>
+  <label for="bar">Bar Name:</label>
+  <input type="text" name="bar" id="bar">
 
-<form action="/drinks" method="POST">
-  <p>
-    <label for="name">Drink Name:</label>
-    <input type="text" name="name" id="name">
-  </p>
-  <p>
-    <label for="bar">Bar Name:</label>
-    <input type="text" name="bar" id="bar">
-  </p>
-  <p>
-    <label for="location">Location:</label>
-    <input type="text" name="location" id="location" value="ex: Denver, CO">
-  </p>
   <label for="rating">Rating:</label><br>
     <ul>
       <li><input type="radio" name="rating" value="0" checked> 0 (SWILL!, never again)</li>
@@ -30,6 +26,5 @@
       <li><input type="radio" name="rating" value="9" checked> 9</li>
       <li><input type="radio" name="rating" value="10" checked> 10 out of 10 would drink again!</li>
     </ul>
-  <input type="submit" value="Upload Drink">
+    <input type="submit" value="Update Drink">
 </form>
-</div>

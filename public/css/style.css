@@ -2,6 +2,7 @@ body {
   background: cornsilk;
   font-family: 'Bungee', sans-serif;
   font-size: .9em;
+  line-height: 1;
 }
 
 header {
@@ -17,6 +18,10 @@ header {
  .welcome {
    padding: 20px 0;
    font-size: .9em;
+}
+
+.pad {
+  padding-left: 2%;
 }
 
 .sign-up {
@@ -47,6 +52,15 @@ header {
   justify-content: space-between;
 }
 
+.button {
+  background: white;
+  font-size: 14px;
+  padding: 2px 5px; 
+  color: #000;
+  border: 1px groove #00000029;
+  border-radius: 5px;
+}
+
 .clear {
   clear: both;
 }
@@ -54,4 +68,8 @@ header {
 img {
   width: 100%;
   height: auto;
+}
+
+.new {
+  padding-left: 37%;
 }
