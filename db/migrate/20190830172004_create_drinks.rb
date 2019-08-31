@@ -7,6 +7,7 @@ class CreateDrinks < ActiveRecord::Migration[5.2]
       t.string :bar
       t.string :location
       t.integer :user_id
+      t.string :image_path
       t.timestamps
     end 
   end

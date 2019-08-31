@@ -4,15 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href='https://fonts.googleapis.com/css?family=Bungee Shade|Bungee' rel='stylesheet'>
     <link rel="stylesheet" href="/css/style.css">
     <title>The Tikiphiles</title>
   </head>
   <body>
-    <header>
+    <header class="center">
       <h1>The Tikiphiles</h1>
 
     </header>
+    <% if logged_in? %>
+      <form class="logout" action="/logout" method="POST">
+        <input id="hidden" type="hidden" name="_method" value="delete">
+        <button type="submit">Log Out</button>
+      </form>
+    <% end %>
     
     <%= yield %>
     

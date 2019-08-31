@@ -1,11 +1,22 @@
-<h2>Welcome <%= current_user.name %></h2>
-<h3>These are a few of your favorite drinks...</h3>
-<% @drinks.each do |drink|%>
-  <h5><%= drink.name %></h5>
-  <ul>
-    <li><%= drink.category %></li>
-    <li><%= drink.rating %></li>
-    <li><%= drink.bar %></li>
-    <li><%= drink.location %></li>
-  </ul>
+<h2 class="center clear">Welcome <%= current_user.name %></h2>
+<h3 class = "center">These are a few of your favorite drinks...</h3>
+
+<div class="container">
+<% @drinks.each_with_index do |drink, i|%>
+  
+  <% if i % 4 == 0 %>
+    <div class="row">
+  <% end %>
+      <div class="col-3">
+        <%= erb :'/drinks/_drink_card', locals: {drink: drink} %>
+      </div>
+  <% if i % 4 == 3 || i == @drinks.length-1 %>
+  </div>
+  <% end %>
 <% end %>
+</div>
+
+
+<!-- want nav bar for new drink creation and log out-->
+<!-- want each drink to have link to edit or delete -->
+<!-- probably would like a sort by drop down to organize drinks accordingly (ie:location, name, etc)>

@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
     user = User.find_by(username: params[:username])
     if !!user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect '/drinks/index'
+      redirect '/drinks'
     else 
       @error = "Invalid attempt, please try again."
       erb :'sessions/login'
@@ -30,5 +30,10 @@ class SessionsController < ApplicationController
       redirect '/drinks'
     end
   end 
+
+  delete '/logout' do 
+    session.clear
+    redirect '/login'
+  end
 
 end 

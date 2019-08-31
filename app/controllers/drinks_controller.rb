@@ -2,7 +2,7 @@ class DrinksController < ApplicationController
 
   get '/drinks' do 
     authenticate
-    @drinks = Drink.all 
+    @drinks = current_user.drinks
     erb :'drinks/index'
   end 
 
@@ -19,7 +19,13 @@ class DrinksController < ApplicationController
     else
       @error = "Invalid attempt, please try again."
       erb :'/drinks/new'
-    end
+    end 
+  end 
+
+  get '/drinks/:id/edit' do 
+    authenticate
+    @drink = Drink.find_by(id: params[:id])
+
   end 
 
   

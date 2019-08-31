@@ -7,6 +7,7 @@ class ApplicationController < Sinatra::Base
 
 
   get '/' do
+    redirect '/drinks' if logged_in?
     erb :index
   end
 

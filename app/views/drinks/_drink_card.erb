@@ -1,0 +1,12 @@
+<div class="card">
+<h5 class="center"><%= drink.name %></h5>
+<% if drink.image_path%>
+<img src=<%= drink.image_path%>>
+<% end %>
+  <ul class="drink_info">
+    <li>Category:  <%= drink.category %></li>
+    <li>Rating:  <%= drink.rating %></li>
+    <li>Bar:  <%= drink.bar %></li>
+    <li>Location:  <%= drink.location %></li>
+  </ul>
+  </div>
