@@ -1,19 +1,20 @@
+<div class="user-form">
 <h2>Edit your drink:</h2>
 
 <form action="/drinks/<% @drink.id %>/edit" method="POST">
-  <input type='hidden' id='hidden' name='_method' value='patch'>
-  
-  <h3><%= @drink.name %></h3>
+  <input type='hidden' id='hidden' name='_method' value='patch'><br>
+
   <label for="name">Name:</label>
-  <input type="text" id="name" name="name">
+  <input type="text" name="name" id="name" value="<%= @drink.name %>"><br>
 
-  <h3><%=@drink.category %></h3>
   <label for="category">Category:</label>
-  <input type="text" id="category" name="category">
+  <input type="text" name="category" id="category" value="<%=@drink.category %>"><br>
 
-  <h3><%= @drink.bar %></h3>
   <label for="bar">Bar Name:</label>
-  <input type="text" name="bar" id="bar">
+  <input type="text" name="bar" id="bar" value="<%= @drink.bar %>"><br>
+
+  <label for="location">Bar Location:</label>
+  <input type="text" name="location" id="location" value="<%= @drink.location %>"><br>
 
   <label for="rating">Rating:</label><br>
     <ul>
@@ -30,7 +31,8 @@
       <li><input type="radio" name="rating" value="10" checked> 10 out of 10 would drink again!</li>
     </ul>
     <label for="image_path">Image URL:</label>
-    <input type="text" name="image_path" id="image_path"><br><br>
+    <input type="text" name="image_path" id="image_path" value="<%= @drink.image_path %>"><br><br>
   <input type="submit" value="Update Drink">
 </form><br>
 <a class="button right" href="/drinks">Go Back</a>
+</div>

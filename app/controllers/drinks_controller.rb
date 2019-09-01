@@ -31,12 +31,13 @@ class DrinksController < ApplicationController
   patch '/drinks/:id' do 
     @drink = Drink.find_by(id: params[:id])
     authorized_user(@drink)
-    if @drink.update(params)
-      @drink.save
-      redirect '/drinks'
-    else 
-      erb :'/drinks'
-    end 
+    @drink.update(name: params[:name], category: params[:category], bar: params[:bar],location: params[:location], rating: params[:rating], image_path: params[:image_path] )
+    
+    if @drink.errors.any?
+      erb :'/drinks/:id/edit'
+    else
+      erb :'/drinks/index'
+    end
   end
 
   delete '/drinks/:id' do 
