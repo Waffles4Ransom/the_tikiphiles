@@ -1,7 +1,7 @@
 <div class="user-form">
 <h2>Edit your drink:</h2>
 
-<form action="/drinks/<% @drink.id %>/edit" method="POST">
+<form action="/drinks/<%= @drink.id %>" method="POST">
   <input type='hidden' id='hidden' name='_method' value='patch'><br>
 
   <label for="name">Name:</label><br>
