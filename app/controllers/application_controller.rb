@@ -27,6 +27,12 @@ class ApplicationController < Sinatra::Base
       end 
     end 
 
+    def authorized_user(drink)
+      authenticate
+      redirect '/drinks' if !drink 
+      redirect '/drinks' if current_user != drink.user
+    end 
+
   end 
   
 

@@ -2,12 +2,15 @@
 
 <form action="/drinks/<% @drink.id %>/edit" method="POST">
   <input type='hidden' id='hidden' name='_method' value='patch'>
+  
   <h3><%= @drink.name %></h3>
   <label for="name">Name:</label>
   <input type="text" id="name" name="name">
+
   <h3><%=@drink.category %></h3>
   <label for="category">Category:</label>
   <input type="text" id="category" name="category">
+
   <h3><%= @drink.bar %></h3>
   <label for="bar">Bar Name:</label>
   <input type="text" name="bar" id="bar">
