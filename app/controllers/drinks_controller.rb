@@ -13,7 +13,7 @@ class DrinksController < ApplicationController
 
   post '/drinks' do 
     user = current_user
-    user.drinks.build(name: params[:name], )
+    user.drinks.build(params)
     if user.save
       redirect '/drinks'
     else
@@ -32,6 +32,7 @@ class DrinksController < ApplicationController
     @drink = Drink.find_by(id: params[:id])
     authorized_user(@drink)
     if @drink.update(params)
+      @drink.save
       redirect '/drinks'
     else 
       erb :'/drinks'
