@@ -4,16 +4,16 @@
 <form action="/drinks/<% @drink.id %>/edit" method="POST">
   <input type='hidden' id='hidden' name='_method' value='patch'><br>
 
-  <label for="name">Name:</label>
+  <label for="name">Name:</label><br>
   <input type="text" name="name" id="name" value="<%= @drink.name %>"><br>
 
-  <label for="category">Category:</label>
+  <label for="category">Category:</label><br>
   <input type="text" name="category" id="category" value="<%=@drink.category %>"><br>
 
-  <label for="bar">Bar Name:</label>
+  <label for="bar">Bar Name:</label><br>
   <input type="text" name="bar" id="bar" value="<%= @drink.bar %>"><br>
 
-  <label for="location">Bar Location:</label>
+  <label for="location">Bar Location:</label><br>
   <input type="text" name="location" id="location" value="<%= @drink.location %>"><br>
 
   <label for="rating">Rating:</label><br>
@@ -30,9 +30,9 @@
       <li><input type="radio" name="rating" value="9" checked> 9</li>
       <li><input type="radio" name="rating" value="10" checked> 10 out of 10 would drink again!</li>
     </ul>
-    <label for="image_path">Image URL:</label>
+    <label for="image_path">Image URL:</label><br>
     <input type="text" name="image_path" id="image_path" value="<%= @drink.image_path %>"><br><br>
-  <input type="submit" value="Update Drink">
+  <input class="button" type="submit" value="Update Drink">
 </form><br>
-<a class="button right" href="/drinks">Go Back</a>
+<a class="right" href="/drinks"><button class="button">Go Back</button></a>
 </div>

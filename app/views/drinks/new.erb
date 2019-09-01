@@ -5,16 +5,16 @@
 
 <form action="/drinks" method="POST">
   
-    <label for="name">Drink Name:</label>
+    <label for="name">Drink Name:</label><br>
     <input type="text" name="name" id="name"><br>
 
-    <label for="category">Drink Category:</label>
+    <label for="category">Drink Category:</label><br>
     <input type="text" name="category" id="category"><br>
 
-    <label for="bar">Bar Name:</label>
+    <label for="bar">Bar Name:</label><br>
     <input type="text" name="bar" id="bar"><br>
   
-    <label for="location">Location:</label>
+    <label for="location">Location:</label><br>
     <input type="text" name="location" id="location" placeholder="ex: Denver, CO"><br>
   
   <label for="rating">Rating:</label><br>
@@ -31,9 +31,9 @@
       <li><input type="radio" name="rating" value="9" checked> 9</li>
       <li><input type="radio" name="rating" value="10" checked> 10 out of 10 would drink again!</li>
     </ul>
-    <label for="image_path">Image URL:</label>
+    <label for="image_path">Image URL:</label><br>
     <input type="text" name="image_path" id="image_path"><br><br>
-  <input type="submit" value="Upload Drink">
+  <input class="button" type="submit" value="Upload Drink">
 </form><br>
-<a class="button right" href="/drinks">Go Back</a>
+<a href="/drinks"><button class="button">Go Back</button></a>
 </div>

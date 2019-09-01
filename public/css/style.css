@@ -8,28 +8,43 @@ body {
 header {
   font-family: 'Bungee Shade';
   font-size: x-large;
+  font-weight: 900;
   padding-top: 50px;
+  letter-spacing: .4em;
+  text-align: center;
+}
+
+span.icon{
+  display: inline-block;
+  padding: 50px;
+}
+
+h1{
+  font-size: 2em;
+  font-weight: 900;
 }
 
 .center {
   text-align: center;
 }
 
- .welcome {
+.welcome {
    padding: 20px 0;
    font-size: .9em;
+   margin-top: 2%;
 }
 
 .pad {
   padding-left: 2%;
 }
 
-.sign-up {
-  
-}
-
-.log-in {
-  
+input {
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid whitesmoke;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 .errors {
@@ -45,29 +60,43 @@ header {
   text-align: left;
   background: floralwhite;
   padding: 10px;
-  height: 500px;
+  height: 600px;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   justify-content: space-between;
+  border: 1.5px solid;
+  box-shadow: 5px 10px #888888;
 }
 
 .button {
-  background: white;
-  font-size: 14px;
-  padding: 1.4px 5px; 
-  color: #000;
-  border: 1px groove #00000029;
-  border-radius: 3.5px;
+  background-color: #f4511e;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
 }
+
+.button:hover {opacity: 1}
 
 .clear {
   clear: both;
+  padding-bottom: 2%;
+  
 }
 
 img {
   width: 100%;
   height: auto;
+  border-radius: 8px;
 }
 
 .user-form {

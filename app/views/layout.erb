@@ -11,13 +11,16 @@
   </head>
   <body>
     <header class="center">
+      <div style="display:inline-flex">
+      <img src="/assets/tikihead.jpg" alt="tiki head" style="width:70px;height:80px;">
       <h1>The Tikiphiles</h1>
-
+      <img src="/assets/tikihead.jpg" alt="tiki head" style="width:70px;height:80px;">
+      </div>
     </header>
     <% if logged_in? %>
       <form class="logout" action="/logout" method="POST">
         <input id="hidden" type="hidden" name="_method" value="delete">
-        <button type="submit">Log Out</button>
+        <button class="button" type="submit">Log Out</button>
       </form>
     <% end %>
     

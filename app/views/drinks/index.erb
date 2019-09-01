@@ -1,5 +1,9 @@
-<h2 class="center clear">Welcome <%= current_user.name %></h2>
-<h3 class = "pad"><a href="/drinks/new">Add a new drink:</a></h3>
+<a href="/drinks/new"><button class="button logout">New Drink</button></a>
+<h2 class="center clear">Welcome <%= current_user.username %></h2>
+<% if @drinks.empty? %>
+  <h3 class="center">It's 5 o'clock somewhere, so let's get this party started.</h3>
+  <div class="center"><a href="/drinks/new"><button class="button">Add your first drink!</button></a></div>
+<% end %>
 
 <div class="container">
 <% @drinks.each_with_index do |drink, i|%>
@@ -16,6 +20,4 @@
 </div>
 
 
-<!-- want nav bar for new drink creation and log out-->
-<!-- want each drink to have link to edit or delete -->
 <!-- probably would like a sort by drop down to organize drinks accordingly (ie:location, name, etc)>
