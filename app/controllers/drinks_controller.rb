@@ -30,9 +30,7 @@ class DrinksController < ApplicationController
   end 
 
   patch '/drinks/:id' do 
-    #binding.pry
     @drink = Drink.find_by(id: params[:id])
-    #binding.pry
     authorized_user(@drink)
     @drink.update(name: params[:name], category: params[:category], bar: params[:bar],location: params[:location], rating: params[:rating], image_path: params[:image_path] )
     
