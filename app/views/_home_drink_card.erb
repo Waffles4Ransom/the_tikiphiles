@@ -1,0 +1,14 @@
+<div class="card">
+<h5 class="center"><%= drink.name %></h5>
+<h6 class="center">Drink enjoyed by tikiphile <br> <%= drink.user.name%></h6>
+<% if drink.image_path%>
+<img src=<%= drink.image_path%>>
+<% end %>
+  
+    Category:  <%= drink.category %><br>
+    Rating:  <%= drink.rating %><br>
+    Bar:  <%= drink.bar %><br>
+    Location:  <%= drink.location %><br>
+  
+  </form>
+</div>

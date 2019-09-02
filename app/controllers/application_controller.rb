@@ -11,6 +11,11 @@ class ApplicationController < Sinatra::Base
     erb :index
   end
 
+  get '/home' do 
+    @drinks = Drink.all 
+    erb :home
+  end 
+
   helpers do 
 
     def logged_in?
