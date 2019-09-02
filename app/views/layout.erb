@@ -11,8 +11,14 @@
   </head>
   <body>
     <header class="center">
-     
+
+     <div style="display:inline-flex">
+      <img src="/assets/ughtiki.png" alt="" style="width:65px;height:65px;">
+      <img src="/assets/happytiki.png" alt="" style="width:65px;height:65px;">
       <h1>The Tikiphiles</h1>
+      <img src="/assets/dizzytiki.png" alt="" style="width:65px;height:65px;">
+      <img src="/assets/angrytiki.png" alt="" style="width:65px;height:65px;">
+      </div>
      
     </header>
     <% if logged_in? %>
@@ -23,6 +29,10 @@
     <% end %>
     
     <%= yield %>
+    
+    <footer class="center">
+      <div style="opacity:0.4;">Coding4Waffles @2019</div>
+    </footer>
     
   </body>
 </html>

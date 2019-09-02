@@ -3,12 +3,12 @@
 <% if drink.image_path%>
 <img src=<%= drink.image_path%>>
 <% end %>
-  <ul class="drink_info">
-    <li>Category:  <%= drink.category %></li>
-    <li>Rating:  <%= drink.rating %></li>
-    <li>Bar:  <%= drink.bar %></li>
-    <li>Location:  <%= drink.location %></li>
-  </ul>
+  
+    Category:  <%= drink.category %><br>
+    Rating:  <%= drink.rating %><br>
+    Bar:  <%= drink.bar %><br>
+    Location:  <%= drink.location %><br>
+  
   <a href="/drinks/<%= drink.id %>/edit"><button class="button">Edit</button></a>
   <form action='/drinks/<%= drink.id %>' method="post">
     <input type='hidden' id='hidden' name='_method' value='delete'>

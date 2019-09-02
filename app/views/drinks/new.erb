@@ -1,9 +1,11 @@
-<div class="user-form">
-<h2>Create a new drink:</h2>
+<div class="center user-form">
 
-<p class="errors"><%= @error if @error%></p>
+<div style="display: inline-block; text-align: left;">
+  <h2>Create a new drink</h2>
 
-<form action="/drinks" method="POST">
+  <p class="errors"><%= @error if @error%></p>
+
+  <form action="/drinks" method="POST">
   
     <label for="name">Drink Name:</label><br>
     <input type="text" name="name" id="name"><br>
@@ -17,7 +19,7 @@
     <label for="location">Location:</label><br>
     <input type="text" name="location" id="location" placeholder="ex: Denver, CO"><br>
   
-  <label for="rating">Rating:</label><br>
+    <label for="rating">Rating:</label><br>
     <ul>
       <li><input type="radio" name="rating" value="0" checked> 0 (SWILL!, never again)</li>
       <li><input type="radio" name="rating" value="1" checked> 1</li>
@@ -36,4 +38,5 @@
   <input class="button" type="submit" value="Upload Drink">
 </form><br>
 <a href="/drinks"><button class="button">Go Back</button></a>
+</div>
 </div>

@@ -1,5 +1,5 @@
 <form class="center sign-up" action="/signup" method="POST">
-  <h2>Become a Tikiphile: </h2>
+  <h2 class="session">Become a Tikiphile </h2>
   <% if @user && @user.errors.any? %>
     <% @user.errors.full_messages.each do |e|%>
       <p class="errors"><%= e %></p>
@@ -18,5 +18,6 @@
     <label for="password_confirmation"> Confirm your Password:</label><br>
     <input type="password" name="password_confirmation" required><br>
   
-  <input class="button" type="submit" value="Sign Up">
+  <input class="button" type="submit" value="Sign Up"><br><br>
+  <img src="/assets/wave.png" alt="" style="width:90px;height:90px;">
 </form>
