@@ -16,4 +16,4 @@ This project is intended to be a safe, welcoming space for collaboration, and co
 
 ## License
 
-This project is licensed under the MIT License - see [LICENSE](the_tikiphiles/LICENSE) for details
+This project is licensed under the MIT License - see [LICENSE](https://github.com/Waffles4Ransom/the_tikiphiles/blob/master/LICENSE) for details
