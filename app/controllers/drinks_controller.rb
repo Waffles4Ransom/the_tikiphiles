@@ -24,7 +24,6 @@ class DrinksController < ApplicationController
 
   get '/drinks/:id/edit' do 
     @drink = Drink.find_by(id: params[:id])
-    #binding.pry
     authorized_user(@drink)
     erb :'/drinks/edit_drink'
   end 
@@ -32,7 +31,7 @@ class DrinksController < ApplicationController
   patch '/drinks/:id' do 
     @drink = Drink.find_by(id: params[:id])
     authorized_user(@drink)
-    @drink.update(name: params[:name], category: params[:category], bar: params[:bar],location: params[:location], rating: params[:rating], image_path: params[:image_path] )
+    @drink.update(name: params[:name], liquor: params[:liquor], served: params[:served], bar: params[:bar],location: params[:location], rating: params[:rating], image_path: params[:image_path])
     
     if @drink.errors.any?
       erb :'/drinks/:id/edit'

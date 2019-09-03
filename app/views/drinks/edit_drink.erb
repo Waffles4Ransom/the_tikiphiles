@@ -8,8 +8,14 @@
   <label for="name">Name:</label><br>
   <input type="text" name="name" id="name" value="<%= @drink.name %>"><br>
 
-  <label for="category">Category:</label><br>
-  <input type="text" name="category" id="category" value="<%=@drink.category %>"><br>
+  <label for="category">How's it Served:</label><br>
+    <input type="checkbox" name="liquor" value="rum based" <%= "checked" if @drink.liquor == "rum based" %>>Rum Based
+    <input type="checkbox" name="liquor" value="gin based" <%= "checked" if @drink.liquor == "gin based" %>>Gin Based
+    <input type="checkbox" name="liquor" value="whiskey based" <%= "checked" if @drink.liquor == "whiskey based" %>>Whiskey Based<br>
+    <input type="checkbox" name="served" value="on rocks" <%= "checked" if @drink.served == "on rocks" %>>On Rocks
+    <input type="checkbox" name="served" value="shaken" <%= "checked" if @drink.served == "shaken" %>>Shaken
+    <input type="checkbox" name="served" value="fishbowl" <%= "checked" if @drink.served == "fishbowl" %>>Fishbowl
+    <input type="checkbox" name="served" value="frozen/blended" <%= "checked" if @drink.served == "frozen/blended" %>>Frozen/Blended</br><br>
 
   <label for="bar">Bar Name:</label><br>
   <input type="text" name="bar" id="bar" value="<%= @drink.bar %>"><br>
@@ -17,8 +23,8 @@
   <label for="location">Bar Location:</label><br>
   <input type="text" name="location" id="location" value="<%= @drink.location %>"><br>
 
-  <label for="rating">Rating:</label><br>
-    <ul>
+  <label for="rating">Rating:</label>  
+  <ul>
       <li><input type="radio" name="rating" value="0" <%= "checked" if @drink.rating == 0 %>> 0 (SWILL!, never again)</li>
       <li><input type="radio" name="rating" value="1" <%= "checked" if @drink.rating == 1 %>> 1</li>
       <li><input type="radio" name="rating" value="2" <%= "checked" if @drink.rating == 2 %>> 2</li>
