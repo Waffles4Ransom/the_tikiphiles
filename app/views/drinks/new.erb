@@ -3,31 +3,35 @@
 <div style="display: inline-block; text-align: left;">
   <h2>Create a new drink</h2>
 
-  <p class="errors"><%= @error if @error%></p>
+  <% if @user && @user.errors.any? %>
+    <div class="errors">
+    <%= @user.errors.full_message(:image_path, "is invalid, please try again.")%>
+    </div><br>
+  <% end %>
 
   <form action="/drinks" method="POST">
   
     <label for="name">Drink Name:</label><br>
-    <input type="text" name="name" id="name"><br>
+    <input type="text" name="name" id="name" required><br>
 
     <label for="category">How's it Served:</label><br>
-    <input type="checkbox" name="liquor" value="rum based">Rum Based
-    <input type="checkbox" name="liquor" value="gin based">Gin Based
-    <input type="checkbox" name="liquor" value="whiskey based">Whiskey Based<br>
-    <input type="checkbox" name="served" value="on rocks">On Rocks
-    <input type="checkbox" name="served" value="shaken">Shaken
-    <input type="checkbox" name="served" value="fishbowl">Fishbowl
-    <input type="checkbox" name="served" value="frozen/blended">Frozen/Blended</br><br>
+    <input type="radio" name="liquor" value="rum based" checked>Rum Based
+    <input type="radio" name="liquor" value="gin based" checked>Gin Based
+    <input type="radio" name="liquor" value="whiskey based" checked>Whiskey Based<br>
+    <input type="radio" name="served" value="on rocks" checked>On Rocks
+    <input type="radio" name="served" value="shaken" checked>Shaken
+    <input type="radio" name="served" value="fishbowl" checked>Fishbowl
+    <input type="radio" name="served" value="frozen/blended" checked>Frozen/Blended</br><br>
 
     <label for="bar">Bar Name:</label><br>
-    <input type="text" name="bar" id="bar"><br>
+    <input type="text" name="bar" id="bar" required><br>
   
     <label for="location">Location:</label><br>
-    <input type="text" name="location" id="location" placeholder="ex: Denver, CO"><br>
+    <input type="text" name="location" id="location" placeholder="ex: Denver, CO" required><br>
   
     <label for="rating">Rating:</label><br>
     <ul>
-      <li><input type="radio" name="rating" value="0" checked> 0 (SWILL!, never again)</li>
+      <li><input type="radio" name="rating" value="0" checked required> 0 (SWILL!, never again)</li>
       <li><input type="radio" name="rating" value="1" checked> 1</li>
       <li><input type="radio" name="rating" value="2" checked> 2</li>
       <li><input type="radio" name="rating" value="3" checked> 3</li>

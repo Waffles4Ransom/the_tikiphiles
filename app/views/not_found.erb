@@ -1,0 +1,16 @@
+<div class="center clear">
+  <h3>...you done it now...</h3><br>
+  <img src="/assets/volcano.png" alt="volcano" style="width:100px;height:100px;">
+  <img src="/assets/volcano.png" alt="volcano" style="width:100px;height:100px;">
+  <img src="/assets/volcano.png" alt="volcano" style="width:100px;height:100px;">
+  <img src="/assets/volcano.png" alt="volcano" style="width:100px;height:100px;"><br><br><br>
+
+  <h4>Looks like you're lost at sea, let's get you back on dry land</h4><br><br>
+  <% if logged_in? %>
+    <a href="/home"><button class="button">Community Home</button></a>
+    <a href="/drinks"><button class="button">Your Home</button></a>
+  <% else %>
+    <a href="/login"><button class="button">Log In</button></a>
+    <a href="/signup"><button class="button">Sign Up</button></a>
+  <% end %>
+</div>

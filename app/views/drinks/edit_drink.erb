@@ -2,6 +2,12 @@
 <div style="display: inline-block; text-align: left;">
 <h2>Edit your drink</h2>
 
+<% if @drink && @drink.errors.any? %>
+    <% @drink.errors.full_messages.each do |e|%>
+      <p class="errors"><%= e %></p>
+      <% end %>
+  <% end %>
+
 <form action="/drinks/<%= @drink.id %>" method="POST">
   <input type='hidden' id='hidden' name='_method' value='patch'><br>
 
@@ -9,13 +15,13 @@
   <input type="text" name="name" id="name" value="<%= @drink.name %>"><br>
 
   <label for="category">How's it Served:</label><br>
-    <input type="checkbox" name="liquor" value="rum based" <%= "checked" if @drink.liquor == "rum based" %>>Rum Based
-    <input type="checkbox" name="liquor" value="gin based" <%= "checked" if @drink.liquor == "gin based" %>>Gin Based
-    <input type="checkbox" name="liquor" value="whiskey based" <%= "checked" if @drink.liquor == "whiskey based" %>>Whiskey Based<br>
-    <input type="checkbox" name="served" value="on rocks" <%= "checked" if @drink.served == "on rocks" %>>On Rocks
-    <input type="checkbox" name="served" value="shaken" <%= "checked" if @drink.served == "shaken" %>>Shaken
-    <input type="checkbox" name="served" value="fishbowl" <%= "checked" if @drink.served == "fishbowl" %>>Fishbowl
-    <input type="checkbox" name="served" value="frozen/blended" <%= "checked" if @drink.served == "frozen/blended" %>>Frozen/Blended</br><br>
+    <input type="radio" name="liquor" value="rum based" <%= "checked" if @drink.liquor == "rum based" %>>Rum Based
+    <input type="radio" name="liquor" value="gin based" <%= "checked" if @drink.liquor == "gin based" %>>Gin Based
+    <input type="radio" name="liquor" value="whiskey based" <%= "checked" if @drink.liquor == "whiskey based" %>>Whiskey Based<br>
+    <input type="radio" name="served" value="on rocks" <%= "checked" if @drink.served == "on rocks" %>>On Rocks
+    <input type="radio" name="served" value="shaken" <%= "checked" if @drink.served == "shaken" %>>Shaken
+    <input type="radio" name="served" value="fishbowl" <%= "checked" if @drink.served == "fishbowl" %>>Fishbowl
+    <input type="radio" name="served" value="frozen/blended" <%= "checked" if @drink.served == "frozen/blended" %>>Frozen/Blended</br><br>
 
   <label for="bar">Bar Name:</label><br>
   <input type="text" name="bar" id="bar" value="<%= @drink.bar %>"><br>

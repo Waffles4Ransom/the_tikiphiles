@@ -12,6 +12,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/home' do 
+    authenticate
     @drinks = Drink.all 
     erb :home
   end 
@@ -38,6 +39,10 @@ class ApplicationController < Sinatra::Base
       redirect '/drinks' if current_user != drink.user
     end 
 
+  end 
+
+  not_found do 
+    erb :not_found
   end 
   
 

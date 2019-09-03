@@ -1,7 +1,9 @@
 <div class="card">
 <h5 class="center"><%= drink.name %></h5>
-<% if drink.image_path%>
-<img src=<%= drink.image_path%>>
+<% if drink.image_path.empty? %>
+  <h5 class="center">You haven't uploaded a photo of your drink yet!</h5>
+<% else %>
+  <img src=<%= drink.image_path%>>
 <% end %>
   
     Category:  <%= drink.liquor %> <%= drink.served%><br>

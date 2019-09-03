@@ -12,12 +12,11 @@ class DrinksController < ApplicationController
   end 
 
   post '/drinks' do 
-    user = current_user
-    user.drinks.build(params)
-    if user.save
+    @user = current_user
+    @user.drinks.build(params)
+    if @user.save
       redirect '/drinks'
     else
-      @error = "Invalid attempt, please try again."
       erb :'/drinks/new'
     end 
   end 
@@ -34,7 +33,7 @@ class DrinksController < ApplicationController
     @drink.update(name: params[:name], liquor: params[:liquor], served: params[:served], bar: params[:bar],location: params[:location], rating: params[:rating], image_path: params[:image_path])
     
     if @drink.errors.any?
-      erb :'/drinks/:id/edit'
+      erb :'/drinks/edit_drink'
     else
       redirect '/drinks'
     end
