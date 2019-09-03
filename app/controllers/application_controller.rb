@@ -37,13 +37,12 @@ class ApplicationController < Sinatra::Base
       authenticate
       redirect '/drinks' if !drink 
       redirect '/drinks' if current_user != drink.user
-    end 
-
+    end
+    
   end 
 
   not_found do 
     erb :not_found
   end 
-  
 
 end

@@ -5,7 +5,7 @@
 
   <% if @user && @user.errors.any? %>
     <div class="errors">
-    <%= @user.errors.full_message(:image_path, "is invalid, please try again.")%>
+    <%= @user.errors.full_message(:image_path, "is invalid, please try again or leave blank.")%>
     </div><br>
   <% end %>
 

@@ -2,7 +2,7 @@
 <div style="display: inline-block; text-align: left;">
 <h2>Edit your drink</h2>
 
-<% if @drink && @drink.errors.any? %>
+<% if @drink && @drink.errors %>
     <% @drink.errors.full_messages.each do |e|%>
       <p class="errors"><%= e %></p>
       <% end %>

@@ -1,6 +1,6 @@
 <form class="center sign-up" action="/signup" method="POST">
   <h2 class="session">Become a Tikiphile </h2>
-  <% if @user && @user.errors.any? %>
+  <% if @user && @user.errors %>
     <% @user.errors.full_messages.each do |e|%>
       <p class="errors"><%= e %></p>
       <% end %>
