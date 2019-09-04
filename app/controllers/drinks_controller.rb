@@ -48,4 +48,22 @@ class DrinksController < ApplicationController
     end 
   end 
 
+  post '/drinks/search' do 
+    @search_word = params[:search]
+    @drinks = Drink.where("liquor LIKE ?", "%#{@search_word}%").where(user: current_user)
+    @searched = true
+    if @drinks.empty?
+      @error = "Sorry, no results!"
+      erb :'/drinks/index'
+    else
+      erb :'/drinks/index'
+    end
+  end 
+
+  post '/drinks/sort' do
+    @sort = params[:sort]
+    @drinks = Drink.order(@sort).where(user: current_user)
+    erb :'drinks/index'
+  end 
+
 end 

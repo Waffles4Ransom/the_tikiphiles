@@ -17,6 +17,13 @@ class ApplicationController < Sinatra::Base
     erb :home
   end 
 
+  post '/home/sort' do 
+    authenticate
+    @sort = params[:sort]
+    @drinks = Drink.order(@sort)
+    erb :'home'
+  end 
+
   helpers do 
 
     def logged_in?

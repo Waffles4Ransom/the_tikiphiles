@@ -4,6 +4,20 @@
 
 <h2 class="center clear">Welcome to the community</h2>
 
+<form class="center" action="/home/sort" method="POST" style="padding-bottom:2%">
+  <select name="sort" id="sort">
+    <option value="name">Drink Name</option>
+    <option value="rating">Drink Rating</option>
+    <option value="location">Drink Location</option>
+    <option value="bar">Bar Name</option>
+    <input class="button sml" type="submit" value="Sort">
+  </select>
+</form>
+
+<% if @sort %>
+  <h6 class="center" style="font-size:24px"> Drinks sorted by <%= @sort %></h6>
+<% end %>
+
 <div class="container">
 <% @drinks.each_with_index do |drink, i|%>
   <% if i % 4 == 0 %>

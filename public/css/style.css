@@ -33,6 +33,10 @@ h2.session {
   margin-bottom: 1.5em;
 }
 
+h6 {
+  margin-bottom: 1em;
+}
+
 .center {
   text-align: center;
 }
@@ -58,6 +62,7 @@ input {
 
 .errors {
   color: rgb(122, 18, 18);
+  font-size: large;
 }
 
 .logout {
@@ -98,7 +103,7 @@ input {
 
 .clear {
   clear: both;
-  padding-bottom: 1.5%;
+  padding: 1.5%;
 }
 
 img {
@@ -109,4 +114,13 @@ img {
 
 .user-form {
  padding-top: 2%;
+}
+
+.sml {
+  padding: 6px 12px;
+  font-size: small;
+}
+
+.search {
+  margin-bottom: 2%;
 }

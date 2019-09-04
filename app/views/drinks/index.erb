@@ -4,9 +4,38 @@
 
 <h2 class="center clear">Welcome <%= current_user.username %></h2>
 
-<% if @drinks.empty? %>
-  <h3 class="center">It's 5 o'clock somewhere, so let's get this party started.</h3>
-  <div class="center"><a href="/drinks/new"><button class="button">Add your first drink!</button></a></div>
+<form class="center" action="/drinks/sort" method="POST">
+  <select name="sort" id="sort">
+    <option value="name">Drink Name</option>
+    <option value="rating">Drink Rating</option>
+    <option value="location">Drink Location</option>
+    <option value="bar">Bar Name</option>
+    <input class="button sml" type="submit" value="Sort">
+  </select>
+</form>
+
+<form class="center search" action="/drinks/search" method="POST">
+  <input type="text" name="search" id="search" placeholder="e.g. 'rum'">
+  <input class="button" type="submit" value="Search">
+</form>
+
+
+<% if @searched %>
+  <% if @error %>   
+    <div class="center">
+      <p class="errors"><%= @error if @error%></p>
+      <a href="/drinks"> <button class="button">Return to Home</button></a>
+    </div>
+  <% end %>
+<% else%>
+  <% if @drinks.empty? %>
+    <h3 class="center">It's 5 o'clock somewhere, so let's get this party started.</h3>
+    <div class="center"><a href="/drinks/new"><button class="button">Add your first drink!</button></a></div>
+  <% end %>
+<% end %>
+
+<% if @sort %>
+  <h6 class="center" style="font-size:24px"> Drinks sorted by <%= @sort %></h6>
 <% end %>
 
 <div class="container">
