@@ -19,15 +19,15 @@
 <% end %>
 
 <div class="container">
-<% @drinks.each_with_index do |drink, i|%>
-  <% if i % 4 == 0 %>
-    <div class="row">
-  <% end %>
+  <% @drinks.each_with_index do |drink, i|%>
+    <% if i % 4 == 0 %>
+      <div class="row">
+    <% end %>
       <div class="col-3">
         <%= erb :'/_home_drink_card', locals: {drink: drink} %>
       </div>
-  <% if i % 4 == 3 || i == @drinks.length-1 %>
-  </div><br><br>
+    <% if i % 4 == 3 || i == @drinks.length-1 %>
+      </div><br><br>
+    <% end %>
   <% end %>
-<% end %>
 </div>

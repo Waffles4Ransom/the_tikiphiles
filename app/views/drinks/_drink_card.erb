@@ -1,19 +1,20 @@
 <div class="card">
-<h5 class="center"><%= drink.name %></h5>
-<% if drink.image_path.empty? %>
-  <h5 class="center">You haven't uploaded a photo of your drink yet!</h5>
-<% else %>
-  <img src=<%= drink.image_path%>>
-<% end %>
-  
-    Category:  <%= drink.liquor %> <%= drink.served%><br>
-    Rating:  <%= drink.rating %><br>
-    Bar:  <%= drink.bar %><br>
-    Location:  <%= drink.location %><br>
-  
-  <a href="/drinks/<%= drink.id %>/edit"><button class="button">Edit</button></a>
+  <h5 class="center"><%= drink.name %></h5>
+
+  <% if drink.image_path.empty? %>
+    <h5 class="center">You haven't uploaded a photo of your drink yet!</h5>
+  <% else %>
+    <img src=<%= drink.image_path%>>
+  <% end %>
+
+  <br><p><%= drink.liquor %> <%= drink.served %></p>
+  <h5>Rating: <%= drink.rating %></h5>
+  <h6 class="center">Bar:<br> <%= drink.bar %></h6>
+  <h6 class="center">Location:<br> <%= drink.location %></h6>
+
+  <a href="/drinks/<%= drink.id %>/edit"><button class="button med">Edit</button></a>
   <form action='/drinks/<%= drink.id %>' method="post">
     <input type='hidden' id='hidden' name='_method' value='delete'>
-    <input class="button" type='submit' value='Delete'>
+    <input class="button med" type='submit' value='Delete'>
   </form>
 </div>

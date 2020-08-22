@@ -1,52 +1,54 @@
 <div class="center user-form">
-<div style="display: inline-block; text-align: left;">
-<h2>Edit your drink</h2>
+  <div style="display: inline-block; text-align: left;">
+    <h2>Edit your drink</h2>
 
-<% if @drink && @drink.errors %>
-    <% @drink.errors.full_messages.each do |e|%>
-      <p class="errors"><%= e %></p>
-      <% end %>
-  <% end %>
+    <% if @drink && @drink.errors %>
+        <% @drink.errors.full_messages.each do |e|%>
+          <p class="errors"><%= e %></p>
+        <% end %>
+    <% end %>
 
-<form action="/drinks/<%= @drink.id %>" method="POST">
-  <input type='hidden' id='hidden' name='_method' value='patch'><br>
+    <form action="/drinks/<%= @drink.id %>" method="POST">
+      <input type='hidden' id='hidden' name='_method' value='patch'><br>
 
-  <label for="name">Name:</label><br>
-  <input type="text" name="name" id="name" value="<%= @drink.name %>"><br>
+      <label for="name">Name:</label><br>
+      <input type="text" name="name" id="name" value="<%= @drink.name %>"><br>
 
-  <label for="category">How's it Served:</label><br>
-    <input type="radio" name="liquor" value="rum based" <%= "checked" if @drink.liquor == "rum based" %>>Rum Based
-    <input type="radio" name="liquor" value="gin based" <%= "checked" if @drink.liquor == "gin based" %>>Gin Based
-    <input type="radio" name="liquor" value="whiskey based" <%= "checked" if @drink.liquor == "whiskey based" %>>Whiskey Based<br>
-    <input type="radio" name="served" value="on rocks" <%= "checked" if @drink.served == "on rocks" %>>On Rocks
-    <input type="radio" name="served" value="shaken" <%= "checked" if @drink.served == "shaken" %>>Shaken
-    <input type="radio" name="served" value="fishbowl" <%= "checked" if @drink.served == "fishbowl" %>>Fishbowl
-    <input type="radio" name="served" value="frozen/blended" <%= "checked" if @drink.served == "frozen/blended" %>>Frozen/Blended</br><br>
+      <label for="category">How's it Served:</label><br>
+        <input type="radio" name="liquor" value="rum based" <%= "checked" if @drink.liquor == "rum based" %>>Rum Based
+        <input type="radio" name="liquor" value="gin based" <%= "checked" if @drink.liquor == "gin based" %>>Gin Based
+        <input type="radio" name="liquor" value="whiskey based" <%= "checked" if @drink.liquor == "whiskey based" %>>Whiskey Based<br>
+        <input type="radio" name="served" value="on rocks" <%= "checked" if @drink.served == "on rocks" %>>On Rocks
+        <input type="radio" name="served" value="shaken" <%= "checked" if @drink.served == "shaken" %>>Shaken
+        <input type="radio" name="served" value="fishbowl" <%= "checked" if @drink.served == "fishbowl" %>>Fishbowl
+        <input type="radio" name="served" value="frozen/blended" <%= "checked" if @drink.served == "frozen/blended" %>>Frozen/Blended</br><br>
 
-  <label for="bar">Bar Name:</label><br>
-  <input type="text" name="bar" id="bar" value="<%= @drink.bar %>"><br>
+      <label for="bar">Bar Name:</label><br>
+      <input type="text" name="bar" id="bar" value="<%= @drink.bar %>"><br>
 
-  <label for="location">Bar Location:</label><br>
-  <input type="text" name="location" id="location" value="<%= @drink.location %>"><br>
+      <label for="location">Bar Location:</label><br>
+      <input type="text" name="location" id="location" value="<%= @drink.location %>"><br>
 
-  <label for="rating">Rating:</label>  
-  <ul>
-      <li><input type="radio" name="rating" value="0" <%= "checked" if @drink.rating == 0 %>> 0 (SWILL!, never again)</li>
-      <li><input type="radio" name="rating" value="1" <%= "checked" if @drink.rating == 1 %>> 1</li>
-      <li><input type="radio" name="rating" value="2" <%= "checked" if @drink.rating == 2 %>> 2</li>
-      <li><input type="radio" name="rating" value="3" <%= "checked" if @drink.rating == 3 %>> 3</li>
-      <li><input type="radio" name="rating" value="4" <%= "checked" if @drink.rating == 4 %>> 4</li>
-      <li><input type="radio" name="rating" value="5" <%= "checked" if @drink.rating == 5 %>> 5</li>
-      <li><input type="radio" name="rating" value="6" <%= "checked" if @drink.rating == 6 %>> 6</li>
-      <li><input type="radio" name="rating" value="7" <%= "checked" if @drink.rating == 7 %>> 7</li>
-      <li><input type="radio" name="rating" value="8" <%= "checked" if @drink.rating == 8 %>> 8</li>
-      <li><input type="radio" name="rating" value="9" <%= "checked" if @drink.rating == 9 %>> 9</li>
-      <li><input type="radio" name="rating" value="10" <%= "checked" if @drink.rating == 10 %>> 10 out of 10 would drink again!</li>
-    </ul>
-    <label for="image_path">Image URL:</label><br>
-    <input type="text" name="image_path" id="image_path" value="<%= @drink.image_path %>"><br><br>
-  <input class="button" type="submit" value="Update Drink">
-</form><br>
-<a class="right" href="/drinks"><button class="button">Go Back</button></a>
-</div>
+      <label for="rating">Rating:</label>  
+      <ul>
+          <li><input type="radio" name="rating" value="0" <%= "checked" if @drink.rating == 0 %>> 0 (SWILL!, never again)</li>
+          <li><input type="radio" name="rating" value="1" <%= "checked" if @drink.rating == 1 %>> 1</li>
+          <li><input type="radio" name="rating" value="2" <%= "checked" if @drink.rating == 2 %>> 2</li>
+          <li><input type="radio" name="rating" value="3" <%= "checked" if @drink.rating == 3 %>> 3</li>
+          <li><input type="radio" name="rating" value="4" <%= "checked" if @drink.rating == 4 %>> 4</li>
+          <li><input type="radio" name="rating" value="5" <%= "checked" if @drink.rating == 5 %>> 5</li>
+          <li><input type="radio" name="rating" value="6" <%= "checked" if @drink.rating == 6 %>> 6</li>
+          <li><input type="radio" name="rating" value="7" <%= "checked" if @drink.rating == 7 %>> 7</li>
+          <li><input type="radio" name="rating" value="8" <%= "checked" if @drink.rating == 8 %>> 8</li>
+          <li><input type="radio" name="rating" value="9" <%= "checked" if @drink.rating == 9 %>> 9</li>
+          <li><input type="radio" name="rating" value="10" <%= "checked" if @drink.rating == 10 %>> 10 out of 10 would drink again!</li>
+        </ul>
+        <label for="image_path">Image URL:</label><br>
+        <input type="text" name="image_path" id="image_path" value="<%= @drink.image_path %>"><br><br>
+      <input class="button" type="submit" value="Update Drink">
+    </form><br>
+
+    <a class="right" href="/drinks"><button class="button">Cancel</button></a>
+    
+  </div>
 </div>

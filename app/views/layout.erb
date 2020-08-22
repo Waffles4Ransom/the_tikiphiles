@@ -10,17 +10,17 @@
     <title>The Tikiphiles</title>
   </head>
   <body>
-    <header class="center">
 
-     <div style="display:inline-flex">
-      <img src="/assets/ughtiki.png" alt="" style="width:65px;height:65px;">
-      <img src="/assets/happytiki.png" alt="" style="width:65px;height:65px;">
-      <h1>The Tikiphiles</h1>
-      <img src="/assets/dizzytiki.png" alt="" style="width:65px;height:65px;">
-      <img src="/assets/angrytiki.png" alt="" style="width:65px;height:65px;">
+    <header class="center">
+      <div style="display:inline-flex">
+        <img src="/assets/ughtiki.png" alt="" style="width:65px;height:65px;">
+        <img src="/assets/happytiki.png" alt="" style="width:65px;height:65px;">
+        <h1>The Tikiphiles</h1>
+        <img src="/assets/dizzytiki.png" alt="" style="width:65px;height:65px;">
+        <img src="/assets/angrytiki.png" alt="" style="width:65px;height:65px;">
       </div>
-     
     </header>
+
     <% if logged_in? %>
       <form class="logout" action="/logout" method="POST">
         <input id="hidden" type="hidden" name="_method" value="delete">

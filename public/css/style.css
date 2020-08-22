@@ -9,7 +9,7 @@ header {
   font-family: 'Bungee Shade';
   font-size: x-large;
   font-weight: 900;
-  padding-top: 50px;
+  padding-top: 2em;
   letter-spacing: .4em;
   text-align: center;
   margin-bottom: 1.5em;
@@ -33,6 +33,10 @@ h2.session {
   margin-bottom: 1.5em;
 }
 
+h4 {
+  margin-top: 0.5em;
+}
+
 h6 {
   margin-bottom: 1em;
 }
@@ -42,9 +46,9 @@ h6 {
 }
 
 .welcome {
-   padding: 20px 0;
-   font-size: .9em;
-   margin-top: 2%;
+  padding: 20px 0;
+  font-size: .9em;
+  margin-top: 2%;
 }
 
 .pad {
@@ -71,13 +75,13 @@ input {
 }
 
 .card {
-  text-align: left;
+  /* text-align: left; */
   background: floralwhite;
-  padding: 10px;
+  padding: 0.9em;
   height: 620px;
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   justify-content: space-between;
   border: 1.5px solid;
   box-shadow: 5px 10px #888888;
@@ -107,8 +111,7 @@ input {
 }
 
 img {
-  width: 100%;
-  height: auto;
+  width: 94%;
   border-radius: 8px;
 }
 
@@ -117,10 +120,19 @@ img {
 }
 
 .sml {
-  padding: 6px 12px;
+  padding: .9em;
+  margin: 0 .3em;
   font-size: small;
 }
 
 .search {
   margin-bottom: 2%;
+}
+
+select {
+  padding: .6em;
+}
+
+.med {
+  padding: .6em;
 }

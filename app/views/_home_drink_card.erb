@@ -1,17 +1,17 @@
 <div class="card">
-<h5 class="center"><%= drink.name %></h5>
-<div class="center">
-  <h6>served at  <%= drink.bar %></h6><br>
-  <h6>in <%= drink.location %></h6><br>
-</div>
-<% if drink.image_path%>
-<img src=<%= drink.image_path%>>
-<% end %>
-  
-    Category:  <%= drink.liquor %> <%= drink.served %><br>
-    Rating:  <%= drink.rating %><br>
-    
-    <h6 class="center">Drink enjoyed by tikiphile <br> <%= drink.user.name%></h6>
-  
-  </form>
+  <h5 class="center"><%= drink.name %></h5>
+    <div class="center">
+      <p>served at</p>
+      <h5><%= drink.bar %></h5><br>
+      <p>in <%= drink.location %></p>
+    </div>
+
+    <% if drink.image_path%>
+    <img src=<%= drink.image_path%>>
+    <% end %>
+
+  <p><%= drink.liquor %> <%= drink.served %></p>
+  <h6>Rating:  <%= drink.rating %></h6>
+
+  <p class="center">Drink enjoyed by tikiphile <br> <%= drink.user.name%></p>
 </div>
