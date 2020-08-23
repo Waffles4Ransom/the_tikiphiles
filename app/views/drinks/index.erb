@@ -1,6 +1,6 @@
 <a href="/home"><button class="button">Community Home</button></a>
-<a href="/drinks"> <button class="button">Your Home</button></a>
-<a href="/drinks/new"><button class="button logout">New Drink</button></a>
+<a href="/drinks"> <button class="button">My Drinks</button></a>
+<a href="/drinks/new"><button class="button logout">Add a New Drink</button></a>
 
 <h2 class="center clear">Welcome <%= current_user.username %></h2>
 
@@ -39,15 +39,15 @@
 <% end %>
 
 <div class="container">
-<% @drinks.each_with_index do |drink, i|%>
-  <% if i % 4 == 0 %>
-    <div class="row">
-  <% end %>
+  <% @drinks.each_with_index do |drink, i|%>
+    <% if i % 4 == 0 %>
+      <div class="row">
+    <% end %>
       <div class="col-3">
         <%= erb :'/drinks/_drink_card', locals: {drink: drink} %>
       </div>
-  <% if i % 4 == 3 || i == @drinks.length-1 %>
-  </div><br><br>
+    <% if i % 4 == 3 || i == @drinks.length-1 %>
+    </div><br><br>
+    <% end %>
   <% end %>
-<% end %>
 </div>
