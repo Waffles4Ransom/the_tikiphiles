@@ -4,6 +4,8 @@ Welcome to the Tikiphiles. A place to record and rate all your tiki drink experi
 
 <img alt="tikiphiles screenshot" src="public/assets/tikiphiles_screenshot.png" width="650">
 
+## <a href="https://youtu.be/VpjDTn5uUBE" target="_blank"><strong>Demo Video</strong></a>
+
 ## Installation & Use
 
 1. Clone this repo
